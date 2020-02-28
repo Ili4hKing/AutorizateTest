@@ -13,8 +13,35 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="MenuPizza">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pizza" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="other" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopBasket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pizza" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Cost" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SizePizza">
+          <Key>
+            <PropertyRef Name="Size" />
+          </Key>
+          <Property Name="Size" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="Хранилище Test11ModelContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuPizza" EntityType="Self.MenuPizza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopBasket" EntityType="Self.ShopBasket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SizePizza" EntityType="Self.SizePizza" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -29,21 +56,75 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Test11Context" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="MenuPizza">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pizza" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopBasket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pizza" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SizePizza">
+          <Key>
+            <PropertyRef Name="Size" />
+          </Key>
+          <Property Name="Size" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Test11Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admin" EntityType="Self.admin" />
+          <EntitySet Name="MenuPizza" EntityType="Self.MenuPizza" />
+          <EntitySet Name="ShopBasket" EntityType="Self.ShopBasket" />
+          <EntitySet Name="SizePizza" EntityType="Self.SizePizza" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Test11ModelContainer" CdmEntityContainer="Test11Context">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Test11ModelContainer" CdmEntityContainer="Test11Entities1">
           <EntitySetMapping Name="admin">
             <EntityTypeMapping TypeName="Test11Model.admin">
               <MappingFragment StoreEntitySet="admin">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuPizza">
+            <EntityTypeMapping TypeName="Test11Model.MenuPizza">
+              <MappingFragment StoreEntitySet="MenuPizza">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Pizza" ColumnName="Pizza" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopBasket">
+            <EntityTypeMapping TypeName="Test11Model.ShopBasket">
+              <MappingFragment StoreEntitySet="ShopBasket">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Pizza" ColumnName="Pizza" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SizePizza">
+            <EntityTypeMapping TypeName="Test11Model.SizePizza">
+              <MappingFragment StoreEntitySet="SizePizza">
+                <ScalarProperty Name="Size" ColumnName="Size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

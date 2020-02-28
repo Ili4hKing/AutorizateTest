@@ -13,10 +13,10 @@ namespace test1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Test11Context : DbContext
+    public partial class Test11Entities1 : DbContext
     {
-        public Test11Context()
-            : base("name=Test11Context")
+        public Test11Entities1()
+            : base("name=Test11Entities1")
         {
         }
     
@@ -26,5 +26,8 @@ namespace test1
         }
     
         public virtual DbSet<admin> admin { get; set; }
+        public virtual DbSet<MenuPizza> MenuPizza { get; set; }
+        public virtual DbSet<ShopBasket> ShopBasket { get; set; }
+        public virtual DbSet<SizePizza> SizePizza { get; set; }
     }
 }

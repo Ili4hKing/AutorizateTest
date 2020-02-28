@@ -27,31 +27,26 @@ namespace test1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            using(Test11Context db = new Test11Context())
+            using(Test11Entities1 db = new Test11Entities1())
             {
 
-                var Admins = db.admin;
-                foreach(admin pl in Admins)
+                var Admins = db.admin.AsNoTracking().FirstOrDefault(u => u.Name == textBox1.Text && u.Password == textBox2.Text);
+              
+                if (Admins == null)
                 {
-                  
-
-                    if (textBox1.Text != pl.Name)
-                    {
-                      
-
-                    }
-                    else if (textBox2.Text != pl.Password)
-                    {
-
-                    }
-                    else
-                    {
-                        this.Hide();
-                        Form3 k = new Form3();
-                        k.Show();
-                    }
+                    MessageBox.Show("Введен неверный логин или пароль");
+                    return;
                 }
+
+                else
+                {
+                    this.Hide();
+                    Form3 k = new Form3();
+                    k.Show();
+                }
+
+            }
             }
         }
     }
-}
+
