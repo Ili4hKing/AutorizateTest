@@ -22,44 +22,56 @@ namespace test1
             }
         }
 
-        // Глобальные переменные 
-        private int x1, y1, x2, y2, r;
-        private double a;
-        private Pen pen = new Pen(Color.DarkRed, 2);
-        // Перерисовка формы
-        private void Form1_Paint(object sender,    PaintEventArgs e)
-        {    Graphics g = e.Graphics;
-            // Рисуем секундную стрелку 
-            g.DrawLine(pen, x1, y1, x2, y2);
-        }
-
-        private void Timer1_Tick_1(object sender, EventArgs e)
-        {
-            a -= 0.1;
-            // Уменьшаем угол на 0,1 радиану 
-            // Новые координаты конца стрелки 
-            x2 = x1 + (int)(r * Math.Cos(a));
-            y2 = y1 - (int)(r * Math.Sin(a));
-            // Принудительный вызов события Paint   
-            Invalidate();
-        }
+    
 
         private void Button1_Click(object sender, EventArgs e)
         {
             using(Test11Entities1 db = new Test11Entities1())
             {
-
-                
-
+                var Login = textBox1.Text;
+                var Pass1 = textBox2.Text;
+                var Pass2 = textBox3.Text;
+                if (Pass1 != Pass2)
+                {
+                    MessageBox.Show("Введите пароль еще раз");
+                    return;
+                }
+                if (Pass1.Length < 4)
+                {
+                    MessageBox.Show("Пароль должен собержать 4 и более символов");
+                    return;
+                }
+                var hasDigits = false;
+                var hasUpperCase = false;
+                var hasLowers = false;
+                var specChars = "!@#$%^&*()_+";
+                var hasSpecChars = false;
+                for (var i =0; i< Pass1.Length; i++)
+                {
+                    var ch = Pass1[i];
+                    if (Char.IsLower(ch)) hasLowers = true;
+                    if (Char.IsUpper(ch)) hasUpperCase = true;
+                    if (specChars.Contains(ch)) hasSpecChars = true;
+                    if (Char.IsDigit(ch)) hasDigits = true;
+                }
+                if(!(hasUpperCase|| hasSpecChars || hasLowers || hasDigits))
+                {
+                    MessageBox.Show("Введите другой пароль");
+                    return;
+                }
+                if (Login.Length == 0 || Pass1.Length == 0)
+                {
+                    MessageBox.Show("Введите логин и пароль");
+                    return;
+                }
 
                 List<admin> admins = new List<admin>();
-
-                admins.Add(new admin { Name = textBox1.Text, Password = textBox2.Text });
-
-
+                admins.Add(new admin { Name = Login, Password = Pass1 });
 
                 db.admin.AddRange(admins);
                 db.SaveChanges();
+
+                MessageBox.Show("Данные сохранены");
 
                 this.Hide();
                 Form2 m = new Form2();
@@ -80,17 +92,8 @@ namespace test1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            r = 150;
-            // Радиус стрелки
-            a = 0;
-            // Угол поворота стрелки
-            // Определяем центр формы – начало стрелки  
-            x1 = ClientSize.Width / 2;
-            y1 = ClientSize.Height / 2;
-            // Конец стрелки 
-            x2 = x1 + (int)(r * Math.Cos(a));
-            y2 = y1- (int)(r * Math.Sin(a));
-        }    // Действия при очередном «тике» таймера
+        
+        }    
        
     }
 }
