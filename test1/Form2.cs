@@ -50,6 +50,13 @@ namespace test1
 
             }
             }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 gh = new Form4();
+            gh.Show();
         }
+    }
     }
 

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,7 +53,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("PMingLiU-ExtB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(554, 305);
+            this.button2.Location = new System.Drawing.Point(499, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(173, 81);
             this.button2.TabIndex = 3;
@@ -94,13 +95,25 @@
             this.textBox2.Size = new System.Drawing.Size(163, 20);
             this.textBox2.TabIndex = 7;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Playbill", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(781, 110);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(195, 115);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Registration Pachient";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(958, 610);
+            this.ClientSize = new System.Drawing.Size(1110, 655);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -109,7 +122,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Authorize";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +135,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
     }
 }

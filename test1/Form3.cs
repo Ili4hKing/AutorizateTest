@@ -23,18 +23,19 @@ namespace test1
 
             using (Test11Entities1 db = new Test11Entities1())
             {
-                var MenuPizzas = db.MenuPizza;
-                var SizePizzas = db.SizePizza;
-                foreach (MenuPizza pl in MenuPizzas)
+                var pacients = db.Pachienti;
+                var Doctors = db.Doctor;
+                foreach (Pachienti pl in pacients)
                 {
 
-                    comboBox1.Items.Add(pl.Pizza);
+                    comboBox1.Items.Add(pl.Familia + " "+ pl.Name +" "+ pl.Otchestvo);
 
                 }
-                foreach (SizePizza tl in SizePizzas)
+                foreach (Doctor tl in Doctors)
                 {
 
-                    comboBox2.Items.Add(tl.Size);
+                    comboBox2.Items.Add(tl.FIO +", "+tl.Specialnost);
+                    
 
                 }
 
@@ -56,47 +57,16 @@ namespace test1
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (Test11Entities1 db = new Test11Entities1())
-            {
-                var MenuPizzas = db.MenuPizza;
-                int i = comboBox1.SelectedIndex + 1;
-               
-
-                foreach (MenuPizza pl in MenuPizzas)
-                {
-                    if (i == pl.id)
-                    {
-                        label5.Text = pl.Cost;
-
-
-                    }
-
-
-                }
-            }
+           
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            using (Test11Entities1 db = new Test11Entities1())
-            {
-                var MenuPizzas = db.MenuPizza;
-                int i = comboBox1.SelectedIndex + 1;
+          
 
 
-                foreach (MenuPizza pl in MenuPizzas)
-                {
-                    if (i == pl.id)
-                    {
-                        label5.Text = pl.Cost;
-
-
-                    }
-
-
-                }
+                
             }
         }
     }
-}

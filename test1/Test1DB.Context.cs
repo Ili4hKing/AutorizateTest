@@ -26,8 +26,9 @@ namespace test1
         }
     
         public virtual DbSet<admin> admin { get; set; }
-        public virtual DbSet<MenuPizza> MenuPizza { get; set; }
-        public virtual DbSet<ShopBasket> ShopBasket { get; set; }
-        public virtual DbSet<SizePizza> SizePizza { get; set; }
+        public virtual DbSet<Doctor> Doctor { get; set; }
+        public virtual DbSet<Pachienti> Pachienti { get; set; }
+        public virtual DbSet<PriemPacientov> PriemPacientov { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

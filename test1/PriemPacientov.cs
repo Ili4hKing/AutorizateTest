@@ -12,11 +12,15 @@ namespace test1
     using System;
     using System.Collections.Generic;
     
-    public partial class MenuPizza
+    public partial class PriemPacientov
     {
         public int id { get; set; }
-        public string Pizza { get; set; }
-        public string other { get; set; }
-        public string Cost { get; set; }
+        public int PacientID { get; set; }
+        public int DoctorID { get; set; }
+        public string Specialnost { get; set; }
+        public System.DateTime Date_of_priema { get; set; }
+    
+        public virtual Doctor Doctor { get; set; }
+        public virtual Pachienti Pachienti { get; set; }
     }
 }
