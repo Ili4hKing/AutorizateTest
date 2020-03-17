@@ -27,7 +27,7 @@ namespace test1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            using(Test11Entities1 db = new Test11Entities1())
+            using(Test11Entities2 db = new Test11Entities2())
             {
                 var Login = textBox1.Text;
                 var Pass = textBox2.Text;
@@ -44,7 +44,7 @@ namespace test1
                     MessageBox.Show("Добро Поржаловать");
 
                     this.Hide();
-                    Form3 k = new Form3();
+                    Form5 k = new Form5();
                     k.Show();
                 }
 

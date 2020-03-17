@@ -15,12 +15,9 @@ namespace test1
     public partial class PriemPacientov
     {
         public int id { get; set; }
-        public int PacientID { get; set; }
-        public int DoctorID { get; set; }
+        public string Pacient { get; set; }
+        public string Doctor { get; set; }
         public string Specialnost { get; set; }
         public System.DateTime Date_of_priema { get; set; }
-    
-        public virtual Doctor Doctor { get; set; }
-        public virtual Pachienti Pachienti { get; set; }
     }
 }

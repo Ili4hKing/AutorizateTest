@@ -14,19 +14,10 @@ namespace test1
     
     public partial class Doctor
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Doctor()
-        {
-            this.PriemPacientov = new HashSet<PriemPacientov>();
-        }
-    
         public int id { get; set; }
         public string FIO { get; set; }
         public string Specialnost { get; set; }
         public decimal Stoimost_Priema { get; set; }
         public int Procent_otcislenia_na_zp { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PriemPacientov> PriemPacientov { get; set; }
     }
 }

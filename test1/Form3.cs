@@ -20,8 +20,8 @@ namespace test1
             {
 
             }
-
-            using (Test11Entities1 db = new Test11Entities1())
+            
+            using (Test11Entities2 db = new Test11Entities2())
             {
                 var pacients = db.Pachienti;
                 var Doctors = db.Doctor;
@@ -57,7 +57,38 @@ namespace test1
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            using (Test11Entities2 db = new Test11Entities2())
+            {
+               
+                var Doctors = db.Doctor;
+               
+                foreach (Doctor tl in Doctors)
+                {
+
+
+                    int Iid = comboBox1.SelectedIndex + 1;
+
+                    if (tl.id == Iid)
+                    {
+
+                        label6.Text = tl.Specialnost;
+
+
+                    }
+
+
+
+
+                }
+
+
+
+
+            }
+
+
+
+
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,5 +99,38 @@ namespace test1
 
                 
             }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 k = new Form5();
+            k.Show();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            using (Test11Entities2 db = new Test11Entities2())
+            {
+                var Doctor = comboBox2.Text;
+                var Pachient = comboBox1.Text;
+                var DatePriema = dateTimePicker1.Value;
+                var Spechialnost = label6.Text;
+
+                List<PriemPacientov> PriemPacientovs = new List<PriemPacientov>();
+                PriemPacientovs.Add(new PriemPacientov {Doctor = Doctor, Pacient = Pachient, Date_of_priema = DatePriema, Specialnost = Spechialnost});
+
+                db.PriemPacientov.AddRange(PriemPacientovs);
+                db.SaveChanges();
+
+                MessageBox.Show("Данные сохранены");
+
+                this.Hide();
+                Form5 m = new Form5();
+                m.Show();
+
+
+
+            }
+        }
+    }
     }

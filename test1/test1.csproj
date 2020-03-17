@@ -59,10 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin.cs">
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
     <Compile Include="Doctor.cs">
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -88,31 +88,37 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pachienti.cs">
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
     <Compile Include="PriemPacientov.cs">
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
-    <Compile Include="Test1Db.Context.cs">
+    <Compile Include="TEst11.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Test1Db.Context.tt</DependentUpon>
+      <DependentUpon>TEst11.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Test1Db.cs">
+    <Compile Include="TEst11.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Test1Db.tt</DependentUpon>
+      <DependentUpon>TEst11.tt</DependentUpon>
     </Compile>
-    <Compile Include="Test1Db.Designer.cs">
+    <Compile Include="TEst11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Test1Db.edmx</DependentUpon>
+      <DependentUpon>TEst11.edmx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,12 +154,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="Test1Db.edmx">
+    <EntityDeploy Include="TEst11.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Test1Db.Designer.cs</LastGenOutput>
+      <LastGenOutput>TEst11.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Test1Db.edmx.diagram">
-      <DependentUpon>Test1Db.edmx</DependentUpon>
+    <None Include="TEst11.edmx.diagram">
+      <DependentUpon>TEst11.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -160,15 +169,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Test1Db.Context.tt">
+    <Content Include="TEst11.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Test1Db.edmx</DependentUpon>
-      <LastGenOutput>Test1Db.Context.cs</LastGenOutput>
+      <DependentUpon>TEst11.edmx</DependentUpon>
+      <LastGenOutput>TEst11.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Test1Db.tt">
+    <Content Include="TEst11.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Test1Db.edmx</DependentUpon>
-      <LastGenOutput>Test1Db.cs</LastGenOutput>
+      <DependentUpon>TEst11.edmx</DependentUpon>
+      <LastGenOutput>TEst11.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,7 +26,7 @@ namespace test1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            using(Test11Entities1 db = new Test11Entities1())
+            using(Test11Entities2 db = new Test11Entities2())
             {
                 var Login = textBox1.Text;
                 var Pass1 = textBox2.Text;

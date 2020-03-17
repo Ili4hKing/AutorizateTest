@@ -26,7 +26,7 @@ namespace test1
         {
 
 
-            using (Test11Entities1 db = new Test11Entities1())
+            using (Test11Entities2 db = new Test11Entities2())
             {
                 var Name = textBox1.Text;
                 var Familia = textBox5.Text;
@@ -44,13 +44,20 @@ namespace test1
                 MessageBox.Show("Данные сохранены");
 
                 this.Hide();
-                Form2 m = new Form2();
+                Form5 m = new Form5();
                 m.Show();
 
 
 
             }
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 k = new Form5();
+            k.Show();
         }
     }
 }

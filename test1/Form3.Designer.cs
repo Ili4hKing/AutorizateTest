@@ -38,6 +38,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -52,7 +55,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(506, 176);
+            this.comboBox2.Location = new System.Drawing.Point(496, 176);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(256, 21);
             this.comboBox2.TabIndex = 2;
@@ -72,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ravie", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(599, 208);
+            this.label3.Location = new System.Drawing.Point(589, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 86);
             this.label3.TabIndex = 4;
@@ -81,18 +84,19 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.Font = new System.Drawing.Font("Old English Text MT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(149, 454);
+            this.button1.Location = new System.Drawing.Point(12, 483);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(613, 181);
+            this.button1.Size = new System.Drawing.Size(601, 163);
             this.button1.TabIndex = 5;
             this.button1.Text = "Registracia priema";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(496, 99);
+            this.label4.Location = new System.Drawing.Point(486, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 57);
             this.label4.TabIndex = 6;
@@ -118,17 +122,52 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Snap ITC", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 212);
+            this.label1.Location = new System.Drawing.Point(26, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(484, 82);
             this.label1.TabIndex = 9;
             this.label1.Text = "Date Priema";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(752, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(208, 83);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Back to menu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(682, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 31);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Spec";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Uighur", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(535, 223);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 42);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Spechialnost: ";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 670);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(961, 670);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
@@ -157,5 +196,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

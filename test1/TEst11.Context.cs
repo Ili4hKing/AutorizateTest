@@ -13,10 +13,10 @@ namespace test1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Test11Entities1 : DbContext
+    public partial class Test11Entities2 : DbContext
     {
-        public Test11Entities1()
-            : base("name=Test11Entities1")
+        public Test11Entities2()
+            : base("name=Test11Entities2")
         {
         }
     
